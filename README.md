@@ -1,4 +1,4 @@
-# 🚀 Alexander Leonardo Kolb - Modern Bento CV Portfolio
+# Alexander Leonardo Kolb - CV Portfolio
 
 Ein hochmodernes, responsives Portfolio-System im **Bento-Grid-Look**, entwickelt mit dem neuesten Web-Stack. Diese Website dient als digitale Visitenkarte und präsentiert meinen Werdegang, meine Projekte und meine Expertise in den Bereichen Informatik und Machine Learning.
 
@@ -8,11 +8,11 @@ Ein hochmodernes, responsives Portfolio-System im **Bento-Grid-Look**, entwickel
 
 ## ✨ Highlights
 
-- 🍱 **Bento-Grid Layout:** Eine strukturierte, kachelbasierte Oberfläche für maximale Übersicht.
-- 🌓 **Dark/Light Mode:** Nahtloser Wechsel zwischen Farbschemata mit LocalStorage-Speicherung.
-- 🎭 **Scroll-Reveal:** Dynamische Animationen für ein lebendiges Benutzererlebnis.
-- 📱 **Fully Responsive:** Optimiert für alle Endgeräte (Mobile, Tablet, Desktop).
-- ⚙️ **Data-Driven:** Alle Inhalte werden zentral über eine `CONTENT.json` gesteuert.
+- **Bento-Grid Layout:** Eine strukturierte, kachelbasierte Oberfläche für maximale Übersicht.
+- **Dark/Light Mode:** Nahtloser Wechsel zwischen Farbschemata mit LocalStorage-Speicherung.
+- **Scroll-Reveal:** Dynamische Animationen für ein lebendiges Benutzererlebnis.
+- **Fully Responsive:** Optimiert für alle Endgeräte (Mobile, Tablet, Desktop).
+- **Data-Driven:** Alle Inhalte werden zentral über eine `CONTENT.json` gesteuert.
 
 ## 🛠️ Tech Stack
 
