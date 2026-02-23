@@ -11,6 +11,7 @@
 - [x] Projekt: FingerCounting AI hinzugefügt
 - [x] Projekt: Unfallatlas Köln Analyse hinzugefügt
 - [x] Sektion "Sprachen & Interessen" erstellt (Lücke im Grid gefüllt)
+- [x] Geheime "Playground"-Seite erstellt (/playground)
 
 ## Next
 - [ ] Weitere Projekte hinzufügen (nach und nach durchgehen)
