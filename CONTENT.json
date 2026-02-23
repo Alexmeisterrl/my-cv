@@ -1,0 +1,94 @@
+{
+  "name": "Alexander Leonardo Kolb",
+  "role": "Computer Science Student & Machine Learning Researcher",
+  "location": "Guckheim / Bonn, DE",
+  "about": "Informatikstudent an der Hochschule Bonn-Rhein-Sieg mit Fokus auf KI, Machine Learning und NLP. Erfahren in der Analyse von Daten und der Entwicklung innovativer Lösungen durch Werkstudententätigkeiten und internationale Forschung.",
+  "links": {
+    "email": "leo.kolb03@gmail.com",
+    "github": "https://github.com/Alexmeisterrl",
+    "linkedin": "https://www.linkedin.com/in/alexander-leonardo-kolb-734459260/"
+  },
+  "skills": [
+    "Python",
+    "Machine Learning",
+    "NLP",
+    "Deep Learning",
+    "LLMs",
+    "Java",
+    "SQL",
+    "Power BI",
+    "C",
+    "Scikit-learn",
+    "Web Scraping"
+  ],
+  "languages": [
+    { "name": "Deutsch", "level": "Muttersprache" },
+    { "name": "Englisch", "level": "C2 Proficiency" },
+    { "name": "Japanisch", "level": "Grundkenntnisse" },
+    { "name": "Latinum", "level": "Kleines Latinum" }
+  ],
+  "interests": ["Fußball (Eintracht Guckheim)", "Künstliche Intelligenz", "Gaming", "Reisen"],
+  "projects": [
+    {
+      "title": "FingerCounting AI",
+      "description": "KI-basierte Handgestenerkennung mit Mediapipe und verschiedenen ML-Modellen (Tensorflow, Scikit-Learn, LightGBM). Forschung an 3D-Landmark-Klassifizierung.",
+      "tech": ["Python", "Tensorflow", "Mediapipe", "Scikit-Learn"],
+      "link": "https://github.com/henthe/fingerCounter"
+    },
+    {
+      "title": "Unfallatlas Köln Analyse",
+      "description": "Explorative Datenanalyse und Geovisualisierung von Verkehrsunfällen in Köln zur Identifizierung von Unfallschwerpunkten und Analyse der Radverkehrssicherheit.",
+      "tech": ["Python", "Pandas", "Matplotlib", "Jupyter"],
+      "link": "https://github.com/henthe/Unfallstatistik_Koeln_Analyse"
+    },
+    {
+      "title": "News Article Identification",
+      "description": "Forschungsprojekt an der Kagawa University zur automatischen Identifizierung von News-Artikeln für Bildungszwecke.",
+      "tech": ["Python", "NLP", "Machine Learning"],
+      "link": "https://github.com/Alexmeisterrl"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Kagawa University (IECMS)",
+      "position": "Research Student - Machine Learning & NLP",
+      "duration": "Okt 2025 - Jan 2026",
+      "location": "Takamatsu, Japan",
+      "description": "Forschungsprojekt zur automatischen Identifizierung von webbasierten Nachrichtenartikeln für 'Newspaper in Education' (NIE) Praktiken in Grundschulen."
+    },
+    {
+      "company": "1&1 Telecommunication SE",
+      "position": "Werkstudent Channel Strategy",
+      "duration": "Nov 2024 - Sept 2025",
+      "location": "Montabaur, DE",
+      "description": "Unterstützung im Bereich Channel Strategy, Datenanalyse mit Power BI und Prozessoptimierung."
+    },
+    {
+      "company": "Bitsea GmbH",
+      "position": "Werkstudent Software Developer",
+      "duration": "Dez 2023 - Jul 2024",
+      "location": "Sankt Augustin, DE",
+      "description": "Entwicklung von Softwarelösungen und Unterstützung in der Qualitätssicherung."
+    }
+  ],
+  "education": [
+    {
+      "school": "Hochschule Bonn-Rhein-Sieg",
+      "degree": "Bachelor of Science - Computer Science",
+      "duration": "Jan 2022 - Heute",
+      "description": "Schwerpunkte: OOP, Data Science, KI, Datenbanken."
+    },
+    {
+      "school": "Berufsbildende Schule Westerburg",
+      "degree": "Abitur (allgemeine Hochschulreife)",
+      "duration": "Aug 2019 - Jul 2022",
+      "description": "Abschluss mit Fokus auf Informationstechnik."
+    },
+    {
+      "school": "Konrad-Adenauer-Gymnasium Westerburg",
+      "degree": "Qualifizierter Sekundarabschluss I",
+      "duration": "Aug 2013 - Jul 2019",
+      "description": ""
+    }
+  ]
+}

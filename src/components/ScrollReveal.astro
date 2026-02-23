@@ -1,0 +1,33 @@
+---
+---
+
+<script is:inline>
+  const revealOnScroll = () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Kleiner Delay basierend auf der Position für einen Stufen-Effekt (Stagger)
+          setTimeout(() => {
+            entry.target.classList.add('reveal-visible');
+            entry.target.classList.remove('reveal-hidden');
+          }, index % 4 * 100); 
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1, // Element wird sichtbar, wenn 10% im Viewport sind
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach((el) => {
+      el.classList.add('reveal-hidden');
+      observer.observe(el);
+    });
+  };
+
+  // Initialisierung
+  document.addEventListener('DOMContentLoaded', revealOnScroll);
+  // Falls Astro View Transitions genutzt werden
+  document.addEventListener('astro:after-swap', revealOnScroll);
+</script>
