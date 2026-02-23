@@ -1,46 +1,54 @@
-# Astro Starter Kit: Basics
+# 🚀 Alexander Leonardo Kolb - Modern Bento CV Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Ein hochmodernes, responsives Portfolio-System im **Bento-Grid-Look**, entwickelt mit dem neuesten Web-Stack. Diese Website dient als digitale Visitenkarte und präsentiert meinen Werdegang, meine Projekte und meine Expertise in den Bereichen Informatik und Machine Learning.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-## 🚀 Project Structure
+## ✨ Highlights
 
-Inside of your Astro project, you'll see the following folders and files:
+- 🍱 **Bento-Grid Layout:** Eine strukturierte, kachelbasierte Oberfläche für maximale Übersicht.
+- 🌓 **Dark/Light Mode:** Nahtloser Wechsel zwischen Farbschemata mit LocalStorage-Speicherung.
+- 🎭 **Scroll-Reveal:** Dynamische Animationen für ein lebendiges Benutzererlebnis.
+- 📱 **Fully Responsive:** Optimiert für alle Endgeräte (Mobile, Tablet, Desktop).
+- ⚙️ **Data-Driven:** Alle Inhalte werden zentral über eine `CONTENT.json` gesteuert.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## 🛠️ Tech Stack
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- **Framework:** [Astro 5](https://astro.build/) (Static Site Generator)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animationen:** Native Tailwind Transitions & Intersection Observer API
+- **Infrastruktur:** Git & GitHub
 
-## 🧞 Commands
+## 🏃 Lokal starten
 
-All commands are run from the root of the project, from a terminal:
+Um das Projekt auf deinem Rechner auszuführen, folge diesen Schritten:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. **Repository klonen:**
+   ```sh
+   git clone https://github.com/Alexmeisterrl/my-cv.git
+   cd my-cv
+   ```
 
-## 👀 Want to learn more?
+2. **Abhängigkeiten installieren:**
+   ```sh
+   npm install
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3. **Entwicklungsserver starten:**
+   ```sh
+   npm run dev
+   ```
+
+4. **Im Browser öffnen:**
+   Gehe zu `http://localhost:4321`
+
+## 📂 Struktur
+
+- `src/pages/index.astro`: Die Hauptseite (Bento-Layout).
+- `CONTENT.json`: Zentrale Datei für alle Texte und Daten.
+- `docs/`: Projekt-Management & Entscheidungs-Dokumentation.
+
+---
+© 2026 Alexander Leonardo Kolb • Gebaut mit Leidenschaft für sauberen Code.
