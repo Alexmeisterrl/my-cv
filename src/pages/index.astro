@@ -25,7 +25,7 @@ import { ClientRouter } from 'astro:transitions';
               Verfügbar für neue Projekte
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight dark:text-white">
-              Moin, ich bin <span class="text-indigo-600 dark:text-indigo-400 italic">{content.name}</span>
+              Hallo, ich bin <span class="text-indigo-600 dark:text-indigo-400 italic">{content.name}</span>
             </h1>
             <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mb-8">
               {content.role} aus <span class="text-gray-900 dark:text-gray-200 font-medium underline decoration-indigo-200 dark:decoration-indigo-800 underline-offset-4">{content.location}</span>. 
@@ -138,17 +138,29 @@ import { ClientRouter } from 'astro:transitions';
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           {content.projects.map((project) => (
-            <a href={project.link} class="group bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-100 dark:border-gray-700/50 hover:bg-white dark:hover:bg-gray-800 hover:shadow-md transition-all hover:-translate-y-1">
+            <div class="group bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-100 dark:border-gray-700/50 hover:bg-white dark:hover:bg-gray-800 hover:shadow-md transition-all flex flex-col">
               <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{project.title}</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-2">{project.description}</p>
-              <div class="flex flex-wrap gap-2 mt-auto">
+              <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-3">{project.description}</p>
+              
+              <div class="flex flex-wrap gap-2 mb-6">
                 {project.tech.map((t) => (
                   <span class="text-[10px] uppercase tracking-wider font-bold px-2 py-1 bg-white dark:bg-gray-700 text-gray-500 dark:text-gray-300 rounded-md border border-gray-100 dark:border-gray-600">
                     {t}
                   </span>
                 ))}
               </div>
-            </a>
+
+              <div class="mt-auto flex gap-3">
+                <a href={project.link} target="_blank" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-indigo-600 transition-colors flex items-center gap-1">
+                   GitHub <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+                {project.demoLink && (
+                  <a href={project.demoLink} class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 hover:opacity-70 transition-colors flex items-center gap-1">
+                     Live Demo <span class="animate-pulse text-lg">✨</span>
+                  </a>
+                )}
+              </div>
+            </div>
           ))}
         </div>
       </section>

@@ -39,5 +39,7 @@ Die Gestenerkennung im AI Playground wurde heute signifikant verbessert, um die 
 - **Glättung (Smoothing):** Implementierung eines Konsens-Puffers (HISTORY_SIZE = 5). Ergebnisse werden über mehrere Frames gemittelt, um "Zittern" und kurzzeitige Fehlklassifizierungen zu eliminieren.
 - **Fallzahl-Korrektur:** Wenn keine Hand im Bild ist, wird nun automatisch das Fragezeichen ("?") bzw. "Suchen..." angezeigt, statt das letzte Ergebnis einzufrieren.
 
-### 📚 Dokumentation & Notebook-Analyse
-- Analyse des Jupyter Notebooks `combined_models.ipynb` ergab, dass die dortigen ML-Modelle auf denselben Landmark-Daten basieren. Die neue Heuristik imitiert das Verhalten dieser Modelle für die Zielklassen (0-5 & Spock) effizient im Browser.
+### 🧪 AI Playground & Portfolio Integration
+- **Projekt-Verknüpfung:** Die Projekt-Kachel "FingerCounting AI" ist nun direkt mit dem AI Playground verlinkt. Ein neuer "Live Demo"-Button mit dezentem Pulse-Effekt hebt dieses interaktive Feature hervor.
+- **UI-Upgrade:** Die Projekt-Sektion wurde von einfachen Links auf ein interaktives Karten-Design mit separaten Links für GitHub und Live-Demos umgestellt.
+- **CONTENT.json:** Erweiterung des Datenmodells um `demoLink` für zukünftige interaktive Projekte.
