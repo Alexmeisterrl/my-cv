@@ -34,7 +34,7 @@
       "description": "KI-basierte Handgestenerkennung mit Mediapipe und verschiedenen ML-Modellen (Tensorflow, Scikit-Learn, LightGBM). Forschung an 3D-Landmark-Klassifizierung.",
       "tech": ["Python", "Tensorflow", "Mediapipe", "Scikit-Learn"],
       "link": "https://github.com/henthe/fingerCounter",
-      "demoLink": "/playground"
+      "demoLink": "/demo"
     },
     {
       "title": "Unfallatlas Köln Analyse",

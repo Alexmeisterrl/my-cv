@@ -10,8 +10,8 @@
 - [x] Sektion "Sprachen & Interessen" (Tags/Pills Design)
 - [x] GitHub Push & .gitignore Korrektur (personal/ geschützt)
 - [x] Professionelle README.md erstellt
-- [x] AI Playground: Kamera + Mediapipe + Gesten-Logik (0-5 & Spock)
-- [x] AI Playground: Gestenerkennung weiter verfeinern (basierend auf Notebook-Daten)
+- [x] AI Demo: Kamera + Mediapipe + Gesten-Logik (0-5 & Spock)
+- [x] AI Demo: Gestenerkennung weiter verfeinern (basierend auf Notebook-Daten)
 
 ## Next
 - [ ] Weitere Projekte aus GitHub-Profil hinzufügen

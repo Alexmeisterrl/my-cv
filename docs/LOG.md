@@ -39,7 +39,8 @@ Die Gestenerkennung im AI Playground wurde heute signifikant verbessert, um die 
 - **Glättung (Smoothing):** Implementierung eines Konsens-Puffers (HISTORY_SIZE = 5). Ergebnisse werden über mehrere Frames gemittelt, um "Zittern" und kurzzeitige Fehlklassifizierungen zu eliminieren.
 - **Fallzahl-Korrektur:** Wenn keine Hand im Bild ist, wird nun automatisch das Fragezeichen ("?") bzw. "Suchen..." angezeigt, statt das letzte Ergebnis einzufrieren.
 
-### 🧪 AI Playground & Portfolio Integration
-- **Projekt-Verknüpfung:** Die Projekt-Kachel "FingerCounting AI" ist nun direkt mit dem AI Playground verlinkt. Ein neuer "Live Demo"-Button mit dezentem Pulse-Effekt hebt dieses interaktive Feature hervor.
+### 🧪 AI Demo & Portfolio Integration
+- **Umbenennung:** Seite von `/playground` auf `/demo` umgestellt. Titel geändert zu "AI Demo" (🤖).
+- **Projekt-Verknüpfung:** Die Projekt-Kachel "FingerCounting AI" ist nun direkt mit der `/demo`-Seite verlinkt.
 - **UI-Upgrade:** Die Projekt-Sektion wurde von einfachen Links auf ein interaktives Karten-Design mit separaten Links für GitHub und Live-Demos umgestellt.
 - **CONTENT.json:** Erweiterung des Datenmodells um `demoLink` für zukünftige interaktive Projekte.
