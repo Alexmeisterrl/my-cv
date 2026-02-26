@@ -42,6 +42,9 @@ Die Gestenerkennung im AI Playground wurde heute signifikant verbessert, um die 
 ### 🧪 AI Demo & Portfolio Integration
 - **Umbenennung:** Seite von `/playground` auf `/demo` umgestellt. Titel geändert zu "AI Demo" (🤖).
 - **Projekt-Verknüpfung:** Die Projekt-Kachel "FingerCounting AI" ist nun direkt mit der `/demo`-Seite verlinkt.
+- **Content-Polishing:** 
+  - Der "Über mich" Text wurde in die Ich-Form umgeschrieben für eine persönlichere Ansprache.
+  - Die Hero-Sektion wurde auf das Wesentliche (Rolle) reduziert für einen cleaneren Look.
 - **UI-Upgrade:** Die Projekt-Sektion wurde von einfachen Links auf ein interaktives Karten-Design mit separaten Links für GitHub und Live-Demos umgestellt.
 - **CONTENT.json:** Erweiterung des Datenmodells um `demoLink` für zukünftige interaktive Projekte.
 - **GitHub Integration:** Eine neue, prominente GitHub-Bento-Kachel wurde hinzugefügt, um die Code-Basis und Beiträge direkt zugänglich zu machen. Die untere Grid-Reihe wurde für ein besseres Layout neu strukturiert (4 gleichmäßige Kacheln).
