@@ -11,3 +11,4 @@
 - **Daten:** Inhalte werden zentral in `CONTENT.json` gepflegt.
 - **Features:** Dark/Light Mode (mit LocalStorage-Speicherung), Scroll-Reveal Animationen.
 - **Profilbild:** Verwendung von `public/profile.jpg` (Original: `pb.jpg`).
+- **Gesten-Erkennung:** Umstellung auf eine orientierungsunabhängige, abstandsbasierte Heuristik (unter Einbeziehung der Z-Achse für 3D-Landmarks) zur besseren Imitation der ML-Modell-Ergebnisse aus dem Jupyter Notebook, inklusive Resultat-Glättung (Consensus-Buffer).

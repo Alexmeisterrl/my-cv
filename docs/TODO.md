@@ -1,23 +1,23 @@
 # TODO
 
 ## Done
-- [x] Grundgerüst mit Astro & Tailwind 4 aufgesetzt
-- [x] Bento-Grid Layout implementiert
-- [x] Persönliche Daten von Alexander Leonardo Kolb eingepflegt
-- [x] Profilbild integriert (`profile.jpg`)
+- [x] Grundgerüst mit Astro & Tailwind 4
+- [x] Bento-Grid Layout & Design-Anpassungen
+- [x] Alle persönlichen Daten (CV/Kenntnisse) eingepflegt
 - [x] Zeitstrahl auf linksbündiges Design umgestellt
-- [x] Dark/Light Mode inkl. Toggle-Button
-- [x] Scroll-Reveal Animationen hinzugefügt
-- [x] Projekt: FingerCounting AI hinzugefügt
-- [x] Projekt: Unfallatlas Köln Analyse hinzugefügt
-- [x] Sektion "Sprachen & Interessen" erstellt (Lücke im Grid gefüllt)
-- [x] Geheime "Playground"-Seite erstellt (/playground)
+- [x] Dark/Light Mode & Scroll-Reveal Animationen
+- [x] Projekt: FingerCounting AI & Unfallatlas Köln hinzugefügt
+- [x] Sektion "Sprachen & Interessen" (Tags/Pills Design)
+- [x] GitHub Push & .gitignore Korrektur (personal/ geschützt)
+- [x] Professionelle README.md erstellt
+- [x] AI Playground: Kamera + Mediapipe + Gesten-Logik (0-5 & Spock)
+- [x] AI Playground: Gestenerkennung weiter verfeinern (basierend auf Notebook-Daten)
 
 ## Next
-- [ ] Weitere Projekte hinzufügen (nach und nach durchgehen)
-- [ ] Kontaktformular (z.B. Formspree) oder E-Mail-Link finalisieren
-- [ ] Deployment-Vorbereitung (GitHub, Vercel/Netlify)
+- [ ] Weitere Projekte aus GitHub-Profil hinzufügen
+- [ ] Kontakt-Sektion finalisieren (E-Mail / Social Buttons)
+- [ ] Deployment (Vercel/Netlify)
 
 ## Later
-- [ ] Blog-Sektion oder Case Studies
-- [ ] Individuelle Favicon-Anpassung
+- [ ] Blog-Sektion
+- [ ] Framer Motion für noch flüssigere Übergänge

@@ -1,36 +1,42 @@
 # Projekt-Logbuch: Alexander Leonardo Kolb CV
 
-## 23. Februar 2026 - Die Geburtsstunde der Bento-Website
+## 23. Februar 2026 - Meilensteine: Content, GitHub & AI Playground
 
-Heute haben wir das Fundament für dein modernes Online-Portfolio gelegt. Hier ist die Zusammenfassung unserer Fortschritte:
+Heute war ein extrem produktiver Tag. Wir haben die Website von einem Platzhalter zu einem echten, persönlichen Portfolio transformiert und erste Schritte in Richtung interaktiver KI-Features gemacht.
 
-### 🛠️ Technisches Setup
-- **Framework:** Astro 5 mit Tailwind CSS 4.
-- **Design:** Modernes Bento-Grid-Layout (4 Spalten) für eine übersichtliche 1-Seiten-Darstellung.
-- **Features:** 
-  - Ein voll funktionsfähiger **Dark/Light Mode** Toggle (inkl. LocalStorage-Persistenz).
-  - **Scroll-Reveal Animationen** für einen dynamischen "Einblend-Effekt" beim Scollen.
-  - Integration von **Astro ClientRouter** für flüssige Übergänge.
+### 👤 Persönliches Profil & Design
+- **Daten-Migration:** Alle Informationen aus Alexanders CV (H-BRS, 1&1, Bitsea, Kagawa University) und der `Kenntnisse.md` wurden in die `CONTENT.json` übertragen.
+- **Profilbild:** Hochwertiges Foto (`pb.jpg`) integriert.
+- **Timeline-Refactoring:** Das Zeitstrahl-Design wurde auf ein sauberes, linksbündiges Layout umgestellt für bessere Lesbarkeit.
+- **Grid-Optimierung:** Die Reihenfolge wurde angepasst (Schule -> Beruf -> Projekte -> Skills). Lücken im Grid wurden durch neue Kacheln für Sprachen und Interessen gefüllt.
 
-### 👤 Profil & Content
-- **Identität:** Website von "Alexander Leonardo Kolb" (Student & ML Researcher).
-- **Profilbild:** Hochwertiges Bild (`profile.jpg`) im Hero-Bereich mit modernem Tilt-Effekt integriert.
-- **Datenquelle:** Alle Inhalte werden zentral und sauber in der `CONTENT.json` verwaltet.
+### 🐙 GitHub & Management
+- **Repository-Start:** Lokales Projekt mit `https://github.com/Alexmeisterrl/my-cv.git` verknüpft und gepusht.
+- **Sicherheit:** `.gitignore` konfiguriert, um den `personal/`-Ordner mit privaten Daten strikt von GitHub fernzuhalten.
+- **Struktur:** Alle Management-Dateien (`PROJECT.md`, `TODO.md`, etc.) in den neuen Ordner `docs/` verschoben für ein sauberes Root-Verzeichnis.
+- **README:** Professionelle, ansprechende README mit Badges und Kurzanleitung erstellt.
 
-### 📈 Lebenslauf & Laufbahnen
-- **Timeline-Design:** Umstellung auf ein professionelles, linksbündiges Zeitstrahl-Layout für maximale Lesbarkeit.
-- **Schulische Laufbahn:** Vollständige Integration (Grundschule bis H-BRS Studium).
-- **Berufliche Laufbahn:** Stationen bei 1&1, Bitsea GmbH und Kagawa University (Japan) eingepflegt.
-
-### 🚀 Projekte & Skills
-- **Skills:** Übergang zu einem modernen Tag-System für technische Fähigkeiten.
-- **Sprachen & Interessen:** Neue Boxen für Sprachkenntnisse (C2 Englisch, Japanisch Basics) und Interessen (Fußball, Gaming, KI) erstellt, um Lücken im Grid zu schließen.
-- **Projekt 1:** "FingerCounting AI" (Deep Learning mit Mediapipe/Tensorflow).
-- **Projekt 2:** "Unfallatlas Köln Analyse" (Geo-Datenanalyse mit Python/Pandas).
-
-### 📐 Layout-Feinschliff
-- Die Sektionen wurden logisch neu geordnet: Hero -> Schule -> Beruf -> Projekte -> Skills/Interessen.
+### 🧪 AI Playground
+- **Setup:** Geheime Seite `/playground` erstellt (unverlinkt, `noindex`).
+- **Live-Demo:** Grundstein für die "FingerCounting AI" Demo gelegt.
+  - Kamera-Zugriff implementiert.
+  - Mediapipe Hand-Tracking integriert (Echtzeit-Skelett-Anzeige).
+  - Robuste Logik für Finger-Zählen (0-5) und die **Spock-Geste (🖖)** in JavaScript entwickelt.
 
 ---
-**Status:** Die Seite ist inhaltlich zu 80% fertig und sieht bereits sehr professionell aus.
-**Nächster Schritt:** Weitere Projekte hinzufügen und Deployment-Vorbereitung.
+**Nächste Session:**
+- Weitere Projekte in die `CONTENT.json` aufnehmen.
+- Deployment-Vorbereitung für die Live-Ansicht.
+
+## 26. Februar 2026 - AI Playground Verfeinerung
+
+Die Gestenerkennung im AI Playground wurde heute signifikant verbessert, um die Präzision und Robustheit zu erhöhen.
+
+### 🧠 Intelligente Heuristik
+- **3D-Abstände:** Die Logik wurde von einfachen 2D-Vergleichen auf 3D-Abstandsmessungen (Euklidische Distanz unter Einbeziehung der Z-Achse) umgestellt. Dies macht die Erkennung weitgehend unabhängig von der Handorientierung zur Kamera.
+- **Robustheit:** Ein Finger wird nun basierend auf dem Abstand zwischen Wurzelgelenk (MCP) und Spitze im Vergleich zum Handgelenk erkannt, was Fehlinterpretationen bei geneigter Hand reduziert.
+- **Spock-Präzision:** Die Spock-Geste wird nun durch Gruppen-Cluster-Logik (Index+Mittel nah, Ring+Kleiner nah, Lücke dazwischen) deutlich stabiler erkannt.
+- **Glättung (Smoothing):** Implementierung eines Konsens-Puffers (HISTORY_SIZE = 5). Ergebnisse werden über mehrere Frames gemittelt, um "Zittern" und kurzzeitige Fehlklassifizierungen zu eliminieren.
+
+### 📚 Dokumentation & Notebook-Analyse
+- Analyse des Jupyter Notebooks `combined_models.ipynb` ergab, dass die dortigen ML-Modelle auf denselben Landmark-Daten basieren. Die neue Heuristik imitiert das Verhalten dieser Modelle für die Zielklassen (0-5 & Spock) effizient im Browser.
