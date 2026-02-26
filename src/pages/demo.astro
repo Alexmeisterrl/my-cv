@@ -15,20 +15,50 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Video & Canvas Area */}
-        <div class="lg:col-span-2 relative bg-black rounded-3xl overflow-hidden shadow-2xl aspect-video border-4 border-white dark:border-slate-800">
-          <video id="webcam" autoplay playsinline class="absolute inset-0 w-full h-full object-cover"></video>
-          <canvas id="output_canvas" class="absolute inset-0 w-full h-full object-cover"></canvas>
-          
-          <div id="loading-overlay" class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm flex flex-col items-center justify-center text-white z-20">
-            <div class="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mb-4"></div>
-            <p class="font-bold tracking-widest uppercase text-xs">Lade KI-Modelle...</p>
+        <div class="lg:col-span-2 space-y-6">
+          <div class="relative bg-black rounded-3xl overflow-hidden shadow-2xl aspect-video border-4 border-white dark:border-slate-800">
+            <video id="webcam" autoplay playsinline class="absolute inset-0 w-full h-full object-cover"></video>
+            <canvas id="output_canvas" class="absolute inset-0 w-full h-full object-cover"></canvas>
+            
+            <div id="loading-overlay" class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm flex flex-col items-center justify-center text-white z-20">
+              <div class="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+              <p class="font-bold tracking-widest uppercase text-xs">Lade KI-Modelle...</p>
+            </div>
+
+            <div class="absolute bottom-6 left-6 z-30 flex gap-3">
+               <div class="px-4 py-2 bg-black/50 backdrop-blur-md rounded-xl border border-white/20 text-white">
+                  <span class="text-xs uppercase font-bold text-indigo-300 block">Ergebnis</span>
+                  <span id="gesture-result" class="text-2xl font-black">Warte...</span>
+               </div>
+            </div>
           </div>
 
-          <div class="absolute bottom-6 left-6 z-30 flex gap-3">
-             <div class="px-4 py-2 bg-black/50 backdrop-blur-md rounded-xl border border-white/20 text-white">
-                <span class="text-xs uppercase font-bold text-indigo-300 block">Ergebnis</span>
-                <span id="gesture-result" class="text-2xl font-black">Warte...</span>
-             </div>
+          <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800">
+            <h2 class="text-2xl font-bold mb-4 dark:text-white text-slate-900 flex items-center gap-2">
+              <span class="text-xl">ℹ️</span> Über diese Demo
+            </h2>
+            <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 space-y-4">
+              <p>
+                Diese interaktive Demo ist Teil meines <strong>FingerCounting AI</strong> Projekts. Sie demonstriert die Echtzeit-Verarbeitung von Computer-Vision-Daten direkt im Browser unter Nutzung von <strong>Mediapipe</strong> für das Hand-Landmark-Tracking.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-700">
+                  <h3 class="font-bold text-slate-900 dark:text-white mb-2 text-sm uppercase tracking-wider">Technischer Ansatz</h3>
+                  <p class="text-sm">
+                    Während mein ursprüngliches Forschungsprojekt komplexe ML-Modelle (Tensorflow, LightGBM) zur Klassifizierung nutzt, implementiert diese Web-Version eine <strong>hochoptimierte 3D-Heuristik</strong>. Sie berechnet euklidische Distanzen zwischen Landmarken im Raum, um Gesten unabhängig von der Kameraperspektive robust zu erkennen.
+                  </p>
+                </div>
+                <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-700">
+                  <h3 class="font-bold text-slate-900 dark:text-white mb-2 text-sm uppercase tracking-wider">Key Features</h3>
+                  <ul class="text-sm list-disc pl-4 space-y-1">
+                    <li>Echtzeit-Skelett-Tracking (21 Landmarks)</li>
+                    <li>3D-Vektorbasiertes Finger-Zählen</li>
+                    <li>Erkennung komplexer Gesten (z.B. Spock-Gruß)</li>
+                    <li>Signalglättung durch Konsens-Buffer</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
