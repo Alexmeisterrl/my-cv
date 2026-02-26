@@ -37,6 +37,7 @@ Die Gestenerkennung im AI Playground wurde heute signifikant verbessert, um die 
 - **Robustheit:** Ein Finger wird nun basierend auf dem Abstand zwischen Wurzelgelenk (MCP) und Spitze im Vergleich zum Handgelenk erkannt, was Fehlinterpretationen bei geneigter Hand reduziert.
 - **Spock-Präzision:** Die Spock-Geste wird nun durch Gruppen-Cluster-Logik (Index+Mittel nah, Ring+Kleiner nah, Lücke dazwischen) deutlich stabiler erkannt.
 - **Glättung (Smoothing):** Implementierung eines Konsens-Puffers (HISTORY_SIZE = 5). Ergebnisse werden über mehrere Frames gemittelt, um "Zittern" und kurzzeitige Fehlklassifizierungen zu eliminieren.
+- **Fallzahl-Korrektur:** Wenn keine Hand im Bild ist, wird nun automatisch das Fragezeichen ("?") bzw. "Suchen..." angezeigt, statt das letzte Ergebnis einzufrieren.
 
 ### 📚 Dokumentation & Notebook-Analyse
 - Analyse des Jupyter Notebooks `combined_models.ipynb` ergab, dass die dortigen ML-Modelle auf denselben Landmark-Daten basieren. Die neue Heuristik imitiert das Verhalten dieser Modelle für die Zielklassen (0-5 & Spock) effizient im Browser.

@@ -131,7 +131,7 @@ import Layout from '../layouts/Layout.astro';
     canvasCtx.save();
     canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
     
-    if (results.landmarks) {
+    if (results.landmarks && results.landmarks.length > 0) {
       for (const landmarks of results.landmarks) {
         // Zeichne die Punkte (einfache Version für den Start)
         drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS, { color: "#6366f1", lineWidth: 5 });
@@ -140,6 +140,9 @@ import Layout from '../layouts/Layout.astro';
         // Hier kommt später deine Logik aus dem Jupyter Notebook rein!
         analyzePose(landmarks);
       }
+    } else {
+      // Wenn keine Hand erkannt wird, "?" senden
+      analyzePose(null);
     }
     canvasCtx.restore();
     window.requestAnimationFrame(predictWebcam);
@@ -180,49 +183,52 @@ import Layout from '../layouts/Layout.astro';
 
   // Pose-Analyse Logik (verfeinert basierend auf Notebook-Konzepten)
   function analyzePose(landmarks) {
-      const wrist = landmarks[0];
-      
-      // Finger-Spitzen und Vergleichsgelenke
-      const tips = [8, 12, 16, 20]; // Zeige, Mittel, Ring, Kleiner
-      const mcps = [5, 9, 13, 17];  // Wurzelgelenke
-      
-      let fingerStates = [false, false, false, false, false]; // Daumen, Zeige, Mittel, Ring, Kleiner
+      let currentResult = "?";
 
-      // 1. Daumen-Logik (Abstand zur Kleinfingerwurzel & Handfläche)
-      // Ein gespreizter Daumen ist weiter von der Handfläche weg
-      const thumbTip = landmarks[4];
-      const thumbIP = landmarks[3];
-      const pinkyBase = landmarks[17];
-      const distThumbToPinky = getDistance(thumbTip, pinkyBase);
-      const distIPToPinky = getDistance(thumbIP, pinkyBase);
-      fingerStates[0] = distThumbToPinky > distIPToPinky * 1.1;
+      if (landmarks) {
+          const wrist = landmarks[0];
+          
+          // Finger-Spitzen und Vergleichsgelenke
+          const tips = [8, 12, 16, 20]; // Zeige, Mittel, Ring, Kleiner
+          const mcps = [5, 9, 13, 17];  // Wurzelgelenke
+          
+          let fingerStates = [false, false, false, false, false]; // Daumen, Zeige, Mittel, Ring, Kleiner
 
-      // 2. Die anderen 4 Finger
-      // Ein Finger ist "oben", wenn die Spitze weiter vom Handgelenk entfernt ist als das Wurzelgelenk
-      for (let i = 0; i < tips.length; i++) {
-          const tipDist = getDistance(landmarks[tips[i]], wrist);
-          const mcpDist = getDistance(landmarks[mcps[i]], wrist);
-          fingerStates[i+1] = tipDist > mcpDist * 1.2; // Puffer für Krümmung
+          // 1. Daumen-Logik (Abstand zur Kleinfingerwurzel & Handfläche)
+          // Ein gespreizter Daumen ist weiter von der Handfläche weg
+          const thumbTip = landmarks[4];
+          const thumbIP = landmarks[3];
+          const pinkyBase = landmarks[17];
+          const distThumbToPinky = getDistance(thumbTip, pinkyBase);
+          const distIPToPinky = getDistance(thumbIP, pinkyBase);
+          fingerStates[0] = distThumbToPinky > distIPToPinky * 1.1;
+
+          // 2. Die anderen 4 Finger
+          // Ein Finger ist "oben", wenn die Spitze weiter vom Handgelenk entfernt ist als das Wurzelgelenk
+          for (let i = 0; i < tips.length; i++) {
+              const tipDist = getDistance(landmarks[tips[i]], wrist);
+              const mcpDist = getDistance(landmarks[mcps[i]], wrist);
+              fingerStates[i+1] = tipDist > mcpDist * 1.2; // Puffer für Krümmung
+          }
+
+          // 3. Spock-Erkennung (🖖)
+          // Alle Finger oben, aber Fingerpaare (8,12) und (16,20) sind nah beieinander, 
+          // während zwischen (12) und (16) eine große Lücke ist.
+          const distIndexMiddle = getDistance(landmarks[8], landmarks[12]);
+          const distMiddleRing = getDistance(landmarks[12], landmarks[16]);
+          const distRingPinky = getDistance(landmarks[16], landmarks[20]);
+          
+          const isSpock = fingerStates[1] && fingerStates[2] && fingerStates[3] && fingerStates[4] && 
+                          distMiddleRing > (distIndexMiddle + distRingPinky) * 1.2;
+
+          if (isSpock) {
+              currentResult = "🖖";
+          } else {
+              currentResult = fingerStates.filter(s => s).length.toString();
+          }
       }
-
-      // 3. Spock-Erkennung (🖖)
-      // Alle Finger oben, aber Fingerpaare (8,12) und (16,20) sind nah beieinander, 
-      // während zwischen (12) und (16) eine große Lücke ist.
-      const distIndexMiddle = getDistance(landmarks[8], landmarks[12]);
-      const distMiddleRing = getDistance(landmarks[12], landmarks[16]);
-      const distRingPinky = getDistance(landmarks[16], landmarks[20]);
-      
-      const isSpock = fingerStates[1] && fingerStates[2] && fingerStates[3] && fingerStates[4] && 
-                      distMiddleRing > (distIndexMiddle + distRingPinky) * 1.2;
 
       // 4. Konsens finden (Glättung)
-      let currentResult = "";
-      if (isSpock) {
-          currentResult = "🖖";
-      } else {
-          currentResult = fingerStates.filter(s => s).length.toString();
-      }
-
       gestureHistory.push(currentResult);
       if (gestureHistory.length > HISTORY_SIZE) gestureHistory.shift();
 
@@ -232,7 +238,7 @@ import Layout from '../layouts/Layout.astro';
       const consensus = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
 
       // UI Update
-      gestureResult.innerText = consensus === "🖖" ? "🖖 SPOCK!" : consensus;
+      gestureResult.innerText = (consensus === "🖖" || consensus === "?") ? (consensus === "🖖" ? "🖖 SPOCK!" : "Suchen...") : consensus;
       updateUI(consensus);
   }
 
