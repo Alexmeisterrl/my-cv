@@ -13,3 +13,4 @@
 - **Naming:** Die interaktive KI-Seite wurde von "Playground" in "AI Demo" umbenannt, um eine klarere und professionellere Wirkung im Portfolio-Kontext zu erzielen.
 - **Profilbild:** Verwendung von `public/profile.jpg` (Original: `pb.jpg`).
 - **Gesten-Erkennung:** Umstellung auf eine orientierungsunabhängige, abstandsbasierte Heuristik (unter Einbeziehung der Z-Achse für 3D-Landmarks) zur besseren Imitation der ML-Modell-Ergebnisse aus dem Jupyter Notebook, inklusive Resultat-Glättung (Consensus-Buffer).
+- **PDF-Export:** Statt allgemeiner Print-Styles für das Bento-Grid wurde eine dedizierte Route `/cv` erstellt. Diese nutzt ein professionelles Sidebar-Design (A4-optimiert) mit dunkler Sidebar, QR-Code zur Website und hoher Informationsdichte für Bewerbungen.

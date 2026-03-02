@@ -26,6 +26,14 @@
     });
   };
 
+  // Sofort alles einblenden wenn Druck-Vorgang startet
+  window.addEventListener('beforeprint', () => {
+    document.querySelectorAll('.reveal').forEach((el) => {
+      el.classList.remove('reveal-hidden');
+      el.classList.add('reveal-visible');
+    });
+  });
+
   // Initialisierung
   document.addEventListener('DOMContentLoaded', revealOnScroll);
   // Falls Astro View Transitions genutzt werden

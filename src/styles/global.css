@@ -26,3 +26,78 @@
 .reveal-visible {
   animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
+/* Print Styles für den perfekten PDF-Export */
+@media print {
+  @page {
+    margin: 1cm;
+    size: auto;
+  }
+
+  /* Erzwinge Light Mode für den Druck */
+  :root {
+    color-scheme: light !important;
+  }
+
+  body {
+    background: white !important;
+    color: #1a1a1a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Alle animierten Sektionen sofort einblenden */
+  .reveal, .reveal-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    visibility: visible !important;
+  }
+
+  /* Interaktive Elemente ausblenden */
+  .theme-toggle, 
+  button, 
+  .no-print,
+  [href^="mailto:"] + div, /* Versteckt die Social Icons neben dem Kontakt Button falls gewünscht */
+  .animate-pulse {
+    display: none !important;
+  }
+
+  /* Layout-Anpassungen für A4 */
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Grid-Stabilität für den Druck */
+  .grid {
+    display: block !important; /* Fallback für alte PDF-Engines */
+    display: grid !important;
+  }
+
+  section {
+    break-inside: avoid; /* Verhindert Umbrüche innerhalb einer Box */
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem !important;
+    border: 1px solid #f3f4f6 !important; /* Leichter Rand für Struktur im PDF */
+    box-shadow: none !important;
+  }
+
+  /* Spezielle Korrektur für den Hero-Bereich */
+  section:first-of-type {
+    background-color: #f9fafb !important;
+  }
+
+  /* Links sauber formatieren (kein Blau/Unterstrichen, wenn nicht gewünscht) */
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  /* "Live Demo" Links explizit im PDF ausblenden */
+  a[href*="/demo"], 
+  a:has(span.animate-pulse) {
+    display: none !important;
+  }
+}

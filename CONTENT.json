@@ -77,18 +77,21 @@
       "school": "Hochschule Bonn-Rhein-Sieg",
       "degree": "Bachelor of Science - Computer Science",
       "duration": "Sep 2022 - Heute",
+      "location": "Sankt Augustin, DE",
       "description": "Schwerpunkte: OOP, Data Science, KI, Datenbanken."
     },
     {
       "school": "Berufsbildende Schule Westerburg",
       "degree": "Abitur (allgemeine Hochschulreife)",
       "duration": "Aug 2019 - Jul 2022",
+      "location": "Westerburg, DE",
       "description": "Abschluss mit Fokus auf Informationstechnik."
     },
     {
       "school": "Konrad-Adenauer-Gymnasium Westerburg",
       "degree": "Qualifizierter Sekundarabschluss I",
       "duration": "Aug 2013 - Jul 2019",
+      "location": "Westerburg, DE",
       "description": ""
     }
   ]
