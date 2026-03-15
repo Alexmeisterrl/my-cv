@@ -15,9 +15,10 @@
 - [x] Dedizierte CV-Seite (`/cv`) für professionellen PDF-Export (Sidebar-Design)
 - [x] Weitere Projekte aus GitHub-Profil hinzufügen
 - [x] CV Download/Export Funktion (PDF-Generierung/Druck-Button & 2-Seiten-Layout)
+- [x] Verlinkung zur CV-Seite im Hero-Bereich (Call-to-Action)
 
 ## Next
-- [ ] Kontakt-Sektion finalisieren (E-Mail / Social Buttons)
+- [ ] Kontakt-Sektion finalisieren (Bento-Card am Ende der Seite)
 - [ ] Deployment (Vercel/Netlify)
 
 ## Later

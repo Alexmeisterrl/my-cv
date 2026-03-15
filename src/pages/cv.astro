@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 import content from '../../CONTENT.json';
 
 // QR-Code Platzhalter
-const websiteUrl = "https://alex-kolb-portfolio.vercel.app";
 ---
 
 <Layout title={`CV | ${content.name}`}>
+  <ThemeToggle />
   <style is:global>
     @media print {
       @page {
@@ -22,7 +23,7 @@ const websiteUrl = "https://alex-kolb-portfolio.vercel.app";
         print-color-adjust: exact !important;
       }
 
-      nav, .no-print { display: none !important; }
+      nav, .no-print, .theme-toggle { display: none !important; }
 
       /* Jede Seite ist ein eigener Block */
       .cv-page {
@@ -40,22 +41,22 @@ const websiteUrl = "https://alex-kolb-portfolio.vercel.app";
     }
   </style>
 
-  <main class="min-h-screen bg-gray-100 py-12 px-4 flex flex-col items-center gap-8 overflow-x-hidden print:bg-white print:py-0 print:px-0 print:block">
+  <main class="min-h-screen bg-gray-100 dark:bg-gray-950 py-12 px-4 flex flex-col items-center gap-8 overflow-x-hidden print:bg-white print:py-0 print:px-0 print:block transition-colors duration-500">
     
     {/* Floating Action Bar */}
     <div class="max-w-[210mm] w-full flex justify-between items-center mb-4 no-print">
-      <a href="/" class="group flex items-center gap-2 text-gray-600 hover:text-indigo-600 font-bold transition-colors">
+      <a href="/" class="group flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 font-bold transition-colors">
         <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         Zurück zum Portfolio
       </a>
-      <button onclick="window.print()" class="bg-indigo-600 text-white px-8 py-3 rounded-2xl font-bold shadow-xl shadow-indigo-200 hover:bg-indigo-700 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+      <button onclick="window.print()" class="bg-indigo-600 text-white px-8 py-3 rounded-2xl font-bold shadow-xl shadow-indigo-200 dark:shadow-none hover:bg-indigo-700 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
         PDF Speichern
       </button>
     </div>
 
     {/* SEITE 1 */}
-    <div class="cv-page w-[210mm] h-[297mm] bg-white shadow-[0_0_60px_rgba(0,0,0,0.05)] flex print:m-0 print:shadow-none">
+    <div class="cv-page w-[210mm] h-[297mm] bg-white shadow-[0_0_60px_rgba(0,0,0,0.05)] dark:shadow-none flex print:m-0 print:shadow-none">
       <aside class="w-[31%] bg-[#1a1c23] text-white flex flex-col p-10 print:p-12 print:bg-[#1a1c23] shrink-0 self-stretch">
         <div class="mb-12 text-center">
           <div class="w-full aspect-square rounded-3xl overflow-hidden mb-8 border-4 border-white/10 shadow-2xl rotate-2">
