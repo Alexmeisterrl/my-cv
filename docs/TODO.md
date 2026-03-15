@@ -16,11 +16,11 @@
 - [x] Weitere Projekte aus GitHub-Profil hinzufügen
 - [x] CV Download/Export Funktion (PDF-Generierung/Druck-Button & 2-Seiten-Layout)
 - [x] Verlinkung zur CV-Seite im Hero-Bereich (Call-to-Action)
+- [x] Deployment (Vercel/Netlify) vorbereitet
 
 ## Next
-- [ ] Kontakt-Sektion finalisieren (Bento-Card am Ende der Seite)
-- [ ] Deployment (Vercel/Netlify)
+- [ ] Blog-Sektion (Optional)
+- [ ] Framer Motion für noch flüssigere Übergänge
 
 ## Later
-- [ ] Blog-Sektion
-- [ ] Framer Motion für noch flüssigere Übergänge
+- [ ] Mehrsprachigkeit (DE/EN)
