@@ -16,6 +16,7 @@
 - [x] Weitere Projekte aus GitHub-Profil hinzufügen
 - [x] CV Download/Export Funktion (PDF-Generierung/Druck-Button & 2-Seiten-Layout)
 - [x] Verlinkung zur CV-Seite im Hero-Bereich (Call-to-Action)
+- [x] QR-Code Integration in die CV-Sidebar
 - [x] Deployment (Vercel/Netlify) vorbereitet
 
 ## Next
